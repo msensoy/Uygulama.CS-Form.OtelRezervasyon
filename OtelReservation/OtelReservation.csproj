@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE6207D0-58C6-423F-9347-641161B24C31}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OtelReservation</RootNamespace>
+    <AssemblyName>OtelReservation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anasayfa.Designer.cs">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassUser.cs" />
+    <Compile Include="5-KonukEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-KonukEkle.Designer.cs">
+      <DependentUpon>5-KonukEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2-Rezervasyon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2-Rezervasyon.Designer.cs">
+      <DependentUpon>2-Rezervasyon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1-Giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1-Giris.Designer.cs">
+      <DependentUpon>1-Giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OdaEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OdaEkle.Designer.cs">
+      <DependentUpon>OdaEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RezervasyonBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RezervasyonBilgileri.Designer.cs">
+      <DependentUpon>RezervasyonBilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RezervasyonOzet.cs" />
+    <Compile Include="4-RezervasyonTamamla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4-RezervasyonTamamla.Designer.cs">
+      <DependentUpon>4-RezervasyonTamamla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-YeniKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-YeniKayit.Designer.cs">
+      <DependentUpon>3-YeniKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="5-KonukEkle.resx">
+      <DependentUpon>5-KonukEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2-Rezervasyon.resx">
+      <DependentUpon>2-Rezervasyon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1-Giris.resx">
+      <DependentUpon>1-Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OdaEkle.resx">
+      <DependentUpon>OdaEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RezervasyonBilgileri.resx">
+      <DependentUpon>RezervasyonBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4-RezervasyonTamamla.resx">
+      <DependentUpon>4-RezervasyonTamamla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-YeniKayit.resx">
+      <DependentUpon>3-YeniKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="OtelImages\dortkisilik.jpg" />
+    <Content Include="OtelImages\ikikisilik.jpg" />
+    <Content Include="OtelImages\suit.jpg" />
+    <Content Include="OtelImages\tekkisilik.jpg" />
+    <Content Include="OtelImages\uckisilik.jpg" />
+    <None Include="Resources\gbackground.jpg" />
+    <None Include="Resources\uckisilik.jpg" />
+    <None Include="Resources\tekkisilik1.jpg" />
+    <None Include="Resources\suit1.jpg" />
+    <None Include="Resources\ikikisilik.jpg" />
+    <None Include="Resources\dortkisilik.jpg" />
+    <None Include="Resources\ückisilik.jpg" />
+    <None Include="Resources\tekkisilik.jpg" />
+    <None Include="Resources\suit.jpg" />
+    <None Include="Resources\indir1.jpg" />
+    <None Include="Resources\dörtkisilik.jpg" />
+    <None Include="Resources\indir.jpg" />
+    <None Include="Resources\geributon.png" />
+    <None Include="Resources\geri.png" />
+    <None Include="Resources\trojanLogo.png" />
+    <None Include="Resources\admin1.jpg" />
+    <None Include="Resources\background1.jpg" />
+    <None Include="Resources\admin.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

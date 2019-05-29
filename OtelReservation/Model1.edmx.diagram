@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2020d3bb276842dea828df7c224bc48e" Name="Diagram1">
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.Customer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.Guest" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.ReservationDetail" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.Reservation" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.RoomDetail" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.Room" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtelRezervasyonDBModel.User" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="OtelRezervasyonDBModel.FK_Reservations_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="OtelRezervasyonDBModel.FK_ReservationDetails_Guests" ManuallyRouted="false" />
+        <AssociationConnector Association="OtelRezervasyonDBModel.FK_ReservationDetails_Reservations" ManuallyRouted="false" />
+        <AssociationConnector Association="OtelRezervasyonDBModel.FK_ReservationDetails_Rooms" ManuallyRouted="false" />
+        <AssociationConnector Association="OtelRezervasyonDBModel.FK_Rooms_RoomDetails" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -23,8 +23,9 @@ namespace OtelReservation
         {
             try
             {
-                var sorgu = _db.Users.Where(x => x.Username == txtKullaniciAdi.Text && x.Password == txtSifre.Text).FirstOrDefault();
+                var X = _db;
 
+                var sorgu = _db.Users.Where(x => x.Username == txtKullaniciAdi.Text && x.Password == txtSifre.Text).FirstOrDefault();
                 if (sorgu != null)
                 {
                     ClassUser kullanici = new ClassUser();
@@ -44,7 +45,7 @@ namespace OtelReservation
 
 
             }
-            catch (Exception)
+            catch (Exception EX)
             {
 
                 MessageBox.Show("Bağlantı Hatası");;

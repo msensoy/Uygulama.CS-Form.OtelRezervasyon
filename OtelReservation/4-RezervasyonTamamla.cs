@@ -107,6 +107,7 @@ namespace OtelReservation
                         int rezervasyonID = (from r in _db.Reservations
                                              orderby r.ReservationID descending
                                              select r.ReservationID).First();
+                        if(misafirAdlari != null) { 
                         for (int j = 0; j < misafirAdlari.Count; j++)
                         {
                             if (misafirAdlari[j] == "-")
@@ -123,18 +124,16 @@ namespace OtelReservation
 
                             ReservationDetail reservationDetail = new ReservationDetail();
 
-                            reservationDetail.GuestID = (from g in _db.Guests
-                                                         orderby g.GuestID descending
-                                                         select g.GuestID).First();
+
                             reservationDetail.RoomID = int.Parse(odaNumaralari[odaNumaralariIndis]);
                             reservationDetail.ReservationID = rezervasyonID;
                             _db.ReservationDetails.Add(reservationDetail);
                             _db.SaveChanges();
                         }
-                        
+                        }
                         #endregion
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Bir Hata oluştu!");
                         transaction.Rollback();

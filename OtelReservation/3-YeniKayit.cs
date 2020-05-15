@@ -12,11 +12,11 @@ namespace OtelReservation
 {
     public partial class frmYeniKayit : Form
     {
-       
 
-        public frmYeniKayit(RezervasyonOzet rezervasyonOzet, ClassUser kullanici) 
+
+        public frmYeniKayit(RezervasyonOzet rezervasyonOzet, ClassUser kullanici)
         {
-           
+
             InitializeComponent();
             this.rezervasyonOzet = rezervasyonOzet;
             this.kullanici = kullanici;
@@ -25,8 +25,8 @@ namespace OtelReservation
             cmbUyruk.Text = "TR";
         }
 
-         OtelRezervasyonDBEntities _db = new  OtelRezervasyonDBEntities();
-       
+        OtelRezervasyonDBEntities _db = new OtelRezervasyonDBEntities();
+
         public RezervasyonOzet rezervasyonOzet;
         private ClassUser kullanici;
 
@@ -67,8 +67,8 @@ namespace OtelReservation
 
             if (txtAd.Text == "" || txtSoyad.Text == "") { MessageBox.Show("Ad ve Soyad Alanı Boş Geçilemez"); return; }
             if (mstTelefon.Text == "") { MessageBox.Show("Telefon Alanı Boş Bırakılamaz"); return; }
-           
-   
+
+
             #endregion
 
             #region uyruk secimi
@@ -78,7 +78,7 @@ namespace OtelReservation
                 { MessageBox.Show("TC No Hatalı"); return; }
                 kisi.TcKimlik = txtTcveyaPasaportNo.Text;
             }
-            
+
             else
             {
                 if (txtTcveyaPasaportNo.TextLength != 9)
@@ -118,19 +118,19 @@ namespace OtelReservation
                 MessageBox.Show("Hatalı email!!");
                 return;
             }
-            
+
             #endregion
 
             #region KullaniciAdiKontrolü
-       
+
             #endregion
-            
+
             #region son asama try-catch
             try
             {
                 _db.Customers.Add(kisi);
                 _db.SaveChanges();
-                frmRezervasyonTamamla frmRezervasyonTamamla1 = new frmRezervasyonTamamla(kisi,rezervasyonOzet,kullanici);
+                frmRezervasyonTamamla frmRezervasyonTamamla1 = new frmRezervasyonTamamla(kisi, rezervasyonOzet, kullanici);
                 this.Hide();
 
                 frmRezervasyonTamamla1.ShowDialog();
@@ -138,9 +138,9 @@ namespace OtelReservation
                 //ekranı temizle()
                 Helpers.ContainerClear(grbKisiBilgileri);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
-               // MessageBox.Show("Hata , Kayıt Yapılamadı!"); ;
+                // MessageBox.Show("Hata , Kayıt Yapılamadı!"); ;
             }
             #endregion
 
@@ -156,16 +156,16 @@ namespace OtelReservation
 
         private void txtTcveyaPasaportNo_TextChanged(object sender, EventArgs e)
         {
-            if(lblUyruk.Text=="TC")
+            if (lblUyruk.Text == "TC")
             {
-                if(txtTcveyaPasaportNo.TextLength==11)
+                if (txtTcveyaPasaportNo.TextLength == 11)
                 {
                     var sorgu = (from c in _db.Customers
                                  where c.TcKimlik == txtTcveyaPasaportNo.Text
                                  select c).FirstOrDefault();
                     if (sorgu != null)
                     {
-                        MessageBox.Show("bu kişi zaten var");
+                        MessageBox.Show("Bu kişi zaten kayıtlı!");
                         txtAd.Text = sorgu.FirstName;
                         txtSoyad.Text = sorgu.Lastname;
                         txtEPosta.Text = sorgu.E_Mail;
@@ -177,13 +177,13 @@ namespace OtelReservation
                     }
                 }
             }
-            
+
         }
 
         private void btnKisiGuncelle_Click(object sender, EventArgs e)
         {
 
-            
+
             string yeniAd = txtAd.Text;
             string yeniSoyad = txtSoyad.Text;
             string yeniTelefonNo = mstTelefon.Text;

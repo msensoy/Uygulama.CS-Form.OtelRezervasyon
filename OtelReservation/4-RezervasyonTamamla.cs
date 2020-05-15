@@ -111,45 +111,19 @@ namespace OtelReservation
                         ReservationDetail reservationDetail = new ReservationDetail();
                         Guest guest = new Guest();
 
+                        guest.FirstName = "null";
+                        guest.LastName = "null";
+                        _db.Guests.Add(guest);
+                        _db.SaveChanges();
 
-                        if (misafirAdlari != null)
-                        {
-                            for (int j = 0; j < misafirAdlari.Count; j++)
-                            {
-                                if (misafirAdlari[j] == "-")
-                                {
-
-                                    odaNumaralariIndis++;
-                                    continue;
-                                }
-                                
-                                guest.FirstName = misafirAdlari[j];
-                                guest.LastName = misafirSoyadlari[j];
-                                _db.Guests.Add(guest);
-                                _db.SaveChanges();
-
-                                //reservationDetail.RoomID = int.Parse(odaNumaralari[odaNumaralariIndis]);
-                                //reservationDetail.ReservationID = rezervasyonID;
-                                //_db.ReservationDetails.Add(reservationDetail);
-                                //_db.SaveChanges();
-                            }
-                        }
-                        else
-                        {
-                            guest.FirstName = "null";
-                            guest.LastName = "null";
-                            _db.Guests.Add(guest);
-                            _db.SaveChanges();
-                        }
 
                         int guestID = (from r in _db.Guests
                                        orderby r.GuestID descending
                                        select r.GuestID).FirstOrDefault();
 
-                        if (rezervasyonOzet.SecilenOdaNumaralari.Count == 1)
+                        for (int i = 0; i < rezervasyonOzet.SecilenOdaNumaralari.Count; i++)
                         {
-                            int odaNumara = rezervasyonOzet.SecilenOdaNumaralari.First();
-
+                            int odaNumara = rezervasyonOzet.SecilenOdaNumaralari.ToList()[i];
                             int roomID = (from r in _db.Rooms
                                           where r.RoomNumber == odaNumara
                                           select r.RoomID).First();

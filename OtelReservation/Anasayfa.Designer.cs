@@ -31,12 +31,11 @@
             this.btnRezervasyonYap = new System.Windows.Forms.Button();
             this.BtnOdaEkle = new System.Windows.Forms.Button();
             this.btnRezervasyonGoruntule = new System.Windows.Forms.Button();
-            this.btnOdaSil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRezervasyonYap
             // 
-            this.btnRezervasyonYap.Location = new System.Drawing.Point(111, 91);
+            this.btnRezervasyonYap.Location = new System.Drawing.Point(53, 91);
             this.btnRezervasyonYap.Name = "btnRezervasyonYap";
             this.btnRezervasyonYap.Size = new System.Drawing.Size(104, 72);
             this.btnRezervasyonYap.TabIndex = 0;
@@ -46,7 +45,7 @@
             // 
             // BtnOdaEkle
             // 
-            this.BtnOdaEkle.Location = new System.Drawing.Point(111, 215);
+            this.BtnOdaEkle.Location = new System.Drawing.Point(375, 91);
             this.BtnOdaEkle.Name = "BtnOdaEkle";
             this.BtnOdaEkle.Size = new System.Drawing.Size(104, 72);
             this.BtnOdaEkle.TabIndex = 0;
@@ -56,7 +55,7 @@
             // 
             // btnRezervasyonGoruntule
             // 
-            this.btnRezervasyonGoruntule.Location = new System.Drawing.Point(327, 91);
+            this.btnRezervasyonGoruntule.Location = new System.Drawing.Point(213, 91);
             this.btnRezervasyonGoruntule.Name = "btnRezervasyonGoruntule";
             this.btnRezervasyonGoruntule.Size = new System.Drawing.Size(110, 72);
             this.btnRezervasyonGoruntule.TabIndex = 0;
@@ -64,28 +63,17 @@
             this.btnRezervasyonGoruntule.UseVisualStyleBackColor = true;
             this.btnRezervasyonGoruntule.Click += new System.EventHandler(this.btnRezervasyonGoruntule_Click);
             // 
-            // btnOdaSil
-            // 
-            this.btnOdaSil.Location = new System.Drawing.Point(327, 215);
-            this.btnOdaSil.Name = "btnOdaSil";
-            this.btnOdaSil.Size = new System.Drawing.Size(104, 72);
-            this.btnOdaSil.TabIndex = 0;
-            this.btnOdaSil.Text = "Oda Sil";
-            this.btnOdaSil.UseVisualStyleBackColor = true;
-            // 
             // frmAnasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(580, 361);
+            this.ClientSize = new System.Drawing.Size(567, 264);
             this.Controls.Add(this.btnRezervasyonGoruntule);
-            this.Controls.Add(this.btnOdaSil);
             this.Controls.Add(this.BtnOdaEkle);
             this.Controls.Add(this.btnRezervasyonYap);
             this.Name = "frmAnasayfa";
             this.Text = "Anasayfa";
-            this.Load += new System.EventHandler(this.frmAnasayfa_Load);
             this.ResumeLayout(false);
 
         }
@@ -95,6 +83,5 @@
         private System.Windows.Forms.Button btnRezervasyonYap;
         private System.Windows.Forms.Button BtnOdaEkle;
         private System.Windows.Forms.Button btnRezervasyonGoruntule;
-        private System.Windows.Forms.Button btnOdaSil;
     }
 }

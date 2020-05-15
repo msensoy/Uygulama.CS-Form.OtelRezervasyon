@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OtelReservation
@@ -112,6 +109,7 @@ namespace OtelReservation
                                               join re in _db.Reservations on
                                               r.ReservationID equals re.ReservationID
                                               where (
+                                                  re.IsActive == true &&
                                                   re.EntryDate != null
                                                   &&
                                                     (_resCikisTarihi >= re.EntryDate
@@ -191,7 +189,7 @@ namespace OtelReservation
                             where ro.RoomNumber == odaNo
                             select rd.Price).FirstOrDefault();
 
-            lblUcret.Text = odaUcret.ToString();
+            lblUcret.Text = odaUcret.ToString("N2");
             lblToplamUcret.Text = "";
             lblToplamKapasite.Text = "";
             _odaNumaralari = new HashSet<int>();
@@ -242,7 +240,6 @@ namespace OtelReservation
             #region EkraniTemizle
             pnlOdaBilgileri.Controls.Clear();
             lblToplamKapasite.Text = "";
-            lblToplamOdaSayisi.Text = "";
             lblToplamUcret.Text = "";
             OdalariGuncelle();
             #endregion

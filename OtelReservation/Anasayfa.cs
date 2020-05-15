@@ -39,10 +39,5 @@ namespace OtelReservation
             frmOdaEkle.ShowDialog();
           
         }
-
-        private void frmAnasayfa_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

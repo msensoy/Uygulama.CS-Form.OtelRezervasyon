@@ -324,7 +324,6 @@
             this.IsMdiContainer = true;
             this.Name = "frmRezervasyonTamamla";
             this.Text = "RezervasyonTamamla";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmRezervasyonTamamla_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

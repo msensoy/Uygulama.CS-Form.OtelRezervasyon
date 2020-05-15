@@ -31,7 +31,6 @@ namespace OtelReservation
                              r.NumberOfAccomodation
                          }
                         );
-            var sorgu1 = _db.Reservations.Select(x => x.Customer).ToList();
             dgvReservations.DataSource = sorgu.ToList();
             dgvReservations.Columns[0].HeaderText = "Rezervasyon Numarası";
             dgvReservations.Columns[1].HeaderText = "Oda Numarası";
@@ -55,21 +54,6 @@ namespace OtelReservation
 
         }
 
-        private void btnRezervasyonGüncelle_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                _db.SaveChanges();
-
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("İşlem Sırasında Hata Oluştu");
-            }
-
-        }
         int dgvRezervasyonID = 0;
         private void btnSil_Click(object sender, EventArgs e)
         {
@@ -81,7 +65,8 @@ namespace OtelReservation
                 var rezervasyon = (from r in _db.Reservations
                                    where r.ReservationID == dgvRezervasyonID
                                    select r).First();
-                _db.Reservations.Remove(rezervasyon);
+              
+                _db.Reservations.Where(x => x.ReservationID == dgvRezervasyonID).First().IsActive = false;
             }
             try
             {
@@ -90,7 +75,7 @@ namespace OtelReservation
                 MessageBox.Show("Silme işleminiz başarı ile gerçekleşti.");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 MessageBox.Show("İşlem Sırasında Hata Oluştu");
@@ -99,7 +84,16 @@ namespace OtelReservation
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _db.SaveChanges();
 
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("İşlem Sırasında Hata Oluştu");
+            }
         }
     }
 }

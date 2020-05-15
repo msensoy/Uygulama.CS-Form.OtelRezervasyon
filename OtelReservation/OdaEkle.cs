@@ -32,6 +32,11 @@ namespace OtelReservation
         {
             Room oda = new Room();
             oda.RoomNumber = Convert.ToInt32(txtOdaNo.Text);
+            if(_db.Rooms.Any(x=>x.RoomNumber == oda.RoomNumber))
+            {
+                MessageBox.Show("Bu oda numarası zaten eklenmişti!");
+                return;
+            }
             var roomDetailID = (from rd in _db.RoomDetails where rd.RoomType == cmbOdaTurleri.SelectedItem.ToString() select rd.RoomDetailID).First();
             oda.RoomDetailID = roomDetailID;
 
@@ -40,7 +45,7 @@ namespace OtelReservation
             try
             {
                 _db.SaveChanges();
-                MessageBox.Show("Oda eklendi!");
+                MessageBox.Show("Oda başarılı bir şekilde eklendi.");
             }
             catch (Exception)
             {

@@ -12,7 +12,7 @@ namespace OtelReservation
     {
         public enum Gender
         {
-            kadın, erkek, diger
+            diger, erkek, kadin
         }
         public static void ContainerClear(Control control)
         {

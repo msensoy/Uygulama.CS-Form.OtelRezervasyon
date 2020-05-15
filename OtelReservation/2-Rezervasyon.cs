@@ -11,30 +11,29 @@ using System.Windows.Forms;
 namespace OtelReservation
 {
     public partial class frmRezervasyon : Form
-    {       
+    {
         #region _Fields
-
-         OtelRezervasyonDBEntities _db;
+        OtelRezervasyonDBEntities _db;
         DateTime _resGirisTarihi;
         DateTime _resCikisTarihi;
-        short toplamKapasite;
-        double toplamUcret;
-        int odaNumarasi;
-        int clickSayisi;
-
+        short _toplamKapasite;
+        double _toplamUcret;
+        private ClassUser _kullanici;
+        HashSet<int> _odaNumaralari;
         #endregion
 
 
         public frmRezervasyon(ClassUser kullanici)
         {
             InitializeComponent();
-            _db = new  OtelRezervasyonDBEntities();
-            this.kullanici = kullanici;
+            _db = new OtelRezervasyonDBEntities();
+            this._kullanici = kullanici;
+            _odaNumaralari = new HashSet<int>();
         }
 
         private void Rezervasyon_Load(object sender, EventArgs e)
         {
-          
+
             #region Oda Türleri db den comboboxa basılıyor
             var odaTurleri = (from r in _db.RoomDetails select r.RoomType).ToList();
             cmbOdaTurleri.DataSource = odaTurleri;
@@ -53,18 +52,18 @@ namespace OtelReservation
             if (lblToplamKapasite.Text == "")
             {
                 btnRezerv.Enabled = false;
-            } 
+            }
             #endregion
 
         }
 
         private void cmbOdaTurleri_SelectedIndexChanged(object sender, EventArgs e)
         {
-            flpOdalar.Controls.Clear(); //Ekranı önce bi temizle
-           
+            flpOdalar.Controls.Clear(); // Ekran temizleniyor
+
             #region Secilen Oda Türüne Ait Odaların Numaraları Liste halinde db den çekiliyor
             var secilenKategoridekiOdaNumaralari = (from r in _db.RoomDetails
-                                                    join ro in _db.Rooms on r.RoomDetailID equals                                       ro.RoomDetailID
+                                                    join ro in _db.Rooms on r.RoomDetailID equals ro.RoomDetailID
                                                     where r.RoomType == cmbOdaTurleri.Text
                                                     select ro.RoomNumber
                                                     ).ToList();
@@ -80,7 +79,7 @@ namespace OtelReservation
                 btn.Text = item.ToString();
                 btn.Height = 50;
                 btn.Width = 50;
-                btn.Tag = "";
+                btn.Tag = " ";
 
                 btn.Click += new EventHandler(btnOda_Click);
                 flpOdalar.Controls.Add(btn); // FlowLayoutPanel'e ekleme işlemi yapıldı
@@ -91,8 +90,8 @@ namespace OtelReservation
             OdalariGuncelle();
 
         }
-    
-        private void dtpTarih_ValueChanged(object sender, EventArgs e) 
+
+        private void dtpTarih_ValueChanged(object sender, EventArgs e)
         // bu event, tarih seçimi değiştiğinde çalışır (date picker ların her ikisi içinde geçerli)
         {
             OdalariGuncelle();
@@ -134,6 +133,7 @@ namespace OtelReservation
                         btn.BackColor = Color.Red;
                         btn.Enabled = false;
                     }
+
                 }
             }
 
@@ -153,70 +153,66 @@ namespace OtelReservation
         {
             Button btn = sender as Button;
 
-            if (btn.BackColor == Color.Yellow) { clickSayisi = 1; }
-
-            toplamKapasite = 0;
-            toplamUcret = 0;
+            _toplamKapasite = 0;
+            _toplamUcret = 0;
 
             pnlOdaBilgileri.Visible = true;
-            clickSayisi++;
+            int odaNo = Convert.ToInt32((btn.Text));
+            lblOdaNo.Text = odaNo.ToString();
+            var btnTag = btn.Tag.ToString();
 
-            if (clickSayisi % 2 == 0)
+            if (!btnTag.Contains("Clicked"))
             {
-                ((Button)sender).BackColor = Color.Yellow;
                 btn.BackColor = Color.Yellow;
-
+                btn.Tag = "Clicked";
             }
-            if (clickSayisi % 2 == 1)
+            else
             {
-                ((Button)sender).BackColor = Color.Green;
-                lblOdaNo.Text = ((Button)sender).Text;
-                int odaNo = Convert.ToInt32(((Button)sender).Text);
-
-                string odaAdıYakala = (from r in _db.RoomDetails
-                                       join ro in _db.Rooms on r.RoomDetailID equals ro.RoomDetailID
-                                       where ro.RoomNumber == odaNo
-                                       select r.RoomType).FirstOrDefault();
-
-                lblOdaTuru.Text = odaAdıYakala;
-
-                var odaKapasitesi = (from rd in _db.RoomDetails
-                                     join ro in _db.Rooms on rd.RoomDetailID equals ro.RoomDetailID
-                                     where ro.RoomNumber == odaNo
-                                     select rd.RoomCapacity
-                               ).FirstOrDefault();
-
-                lblKapasite.Text = odaKapasitesi.ToString();
-
-                var odaUcret = (from rd in _db.RoomDetails
-                                join ro in _db.Rooms on rd.RoomDetailID equals ro.RoomDetailID
-                                where ro.RoomNumber == odaNo
-                                select rd.Price
-                                ).FirstOrDefault();
-                lblUcret.Text = odaUcret.ToString();
-
+                btn.BackColor = Color.Green;
+                btn.Tag = "";
             }
+    
+            string odaCinsi = (from r in _db.RoomDetails
+                               join ro in _db.Rooms on r.RoomDetailID equals ro.RoomDetailID
+                               where ro.RoomNumber == odaNo
+                               select r.RoomType).FirstOrDefault();
 
+            lblOdaTuru.Text = odaCinsi;
+
+            var odaKapasitesi = (from rd in _db.RoomDetails
+                                 join ro in _db.Rooms on rd.RoomDetailID equals ro.RoomDetailID
+                                 where ro.RoomNumber == odaNo
+                                 select rd.RoomCapacity).FirstOrDefault();
+
+            lblKapasite.Text = odaKapasitesi.ToString();
+
+            var odaUcret = (from rd in _db.RoomDetails
+                            join ro in _db.Rooms on rd.RoomDetailID equals ro.RoomDetailID
+                            where ro.RoomNumber == odaNo
+                            select rd.Price).FirstOrDefault();
+
+            lblUcret.Text = odaUcret.ToString();
+            lblToplamUcret.Text = "";
+            lblToplamKapasite.Text = "";
+            _odaNumaralari = new HashSet<int>();
             foreach (Button item in flpOdalar.Controls)
             {
                 if (item.BackColor == Color.Yellow)
                 {
                     btnRezerv.Enabled = true;
 
-                    odaNumaralari.Add(Convert.ToInt32(item.Text));
+                    _odaNumaralari.Add(Convert.ToInt32(item.Text));
 
-                    toplamKapasite += Convert.ToInt16(lblKapasite.Text);
-                    lblToplamKapasite.Text = toplamKapasite.ToString();
+                    _toplamKapasite += Convert.ToInt16(lblKapasite.Text);
+                    lblToplamKapasite.Text = _toplamKapasite.ToString();
 
-                    toplamUcret += Convert.ToDouble(lblUcret.Text);
-                    lblToplamUcret.Text = toplamUcret.ToString();
+                    _toplamUcret += Convert.ToDouble(lblUcret.Text);
+                    lblToplamUcret.Text = _toplamUcret.ToString();
                 }
             }
 
         }
 
-        HashSet<int> odaNumaralari = new HashSet<int>();
-        private ClassUser kullanici;
 
         private void btnRezerv_Click(object sender, EventArgs e)
         {
@@ -224,24 +220,24 @@ namespace OtelReservation
             if (nmKisiSayisi.Value <= 0)
             { MessageBox.Show("Kişi Sayısı Girmediniz!"); return; }
 
-            if (nmKisiSayisi.Value > toplamKapasite)
+            if (nmKisiSayisi.Value > _toplamKapasite)
             { MessageBox.Show("Kişi Sayısı Oda Kapasitesinden Büyük Olamaz"); return; }
             #endregion
 
             #region Rezervasyon bilgilerini "rezervasyonOzet" e kaydetme
             RezervasyonOzet rezervasyonOzet = new RezervasyonOzet();
 
-            rezervasyonOzet.SecilenOdaNumaralari = odaNumaralari;
+            rezervasyonOzet.SecilenOdaNumaralari = _odaNumaralari;
             rezervasyonOzet.MisafirSayisi = Convert.ToInt32(nmKisiSayisi.Value);
-            rezervasyonOzet.ToplamUcret = toplamUcret;
+            rezervasyonOzet.ToplamUcret = _toplamUcret;
             rezervasyonOzet.GirisTarihi = dtpGirisTarihi.Value;
             rezervasyonOzet.CikisTarihi = dtpCikisTarihi.Value;
             #endregion
 
             #region Yeni Kayıt Formunu Açma
-            frmYeniKayit frmYeniKayit = new frmYeniKayit(rezervasyonOzet,kullanici);
+            frmYeniKayit frmYeniKayit = new frmYeniKayit(rezervasyonOzet, _kullanici);
             frmYeniKayit.ShowDialog();
-           
+
 
             #region EkraniTemizle
             pnlOdaBilgileri.Controls.Clear();

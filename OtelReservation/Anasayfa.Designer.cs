@@ -36,7 +36,7 @@
             // 
             // btnRezervasyonYap
             // 
-            this.btnRezervasyonYap.Location = new System.Drawing.Point(130, 140);
+            this.btnRezervasyonYap.Location = new System.Drawing.Point(111, 91);
             this.btnRezervasyonYap.Name = "btnRezervasyonYap";
             this.btnRezervasyonYap.Size = new System.Drawing.Size(104, 72);
             this.btnRezervasyonYap.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // BtnOdaEkle
             // 
-            this.BtnOdaEkle.Location = new System.Drawing.Point(130, 264);
+            this.BtnOdaEkle.Location = new System.Drawing.Point(111, 215);
             this.BtnOdaEkle.Name = "BtnOdaEkle";
             this.BtnOdaEkle.Size = new System.Drawing.Size(104, 72);
             this.BtnOdaEkle.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // btnRezervasyonGoruntule
             // 
-            this.btnRezervasyonGoruntule.Location = new System.Drawing.Point(346, 140);
+            this.btnRezervasyonGoruntule.Location = new System.Drawing.Point(327, 91);
             this.btnRezervasyonGoruntule.Name = "btnRezervasyonGoruntule";
             this.btnRezervasyonGoruntule.Size = new System.Drawing.Size(110, 72);
             this.btnRezervasyonGoruntule.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             // btnOdaSil
             // 
-            this.btnOdaSil.Location = new System.Drawing.Point(346, 264);
+            this.btnOdaSil.Location = new System.Drawing.Point(327, 215);
             this.btnOdaSil.Name = "btnOdaSil";
             this.btnOdaSil.Size = new System.Drawing.Size(104, 72);
             this.btnOdaSil.TabIndex = 0;
@@ -77,7 +77,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(580, 361);
             this.Controls.Add(this.btnRezervasyonGoruntule);
             this.Controls.Add(this.btnOdaSil);
             this.Controls.Add(this.BtnOdaEkle);

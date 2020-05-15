@@ -34,7 +34,6 @@
             this.mstTelefon = new System.Windows.Forms.MaskedTextBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
-            this.rbDiger = new System.Windows.Forms.RadioButton();
             this.rbKadin = new System.Windows.Forms.RadioButton();
             this.rbErkek = new System.Windows.Forms.RadioButton();
             this.txtEPosta = new System.Windows.Forms.TextBox();
@@ -50,10 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.grbKisiBilgileri.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // grbKisiBilgileri
@@ -64,7 +60,6 @@
             this.grbKisiBilgileri.Controls.Add(this.mstTelefon);
             this.grbKisiBilgileri.Controls.Add(this.btnSil);
             this.grbKisiBilgileri.Controls.Add(this.btnKaydet);
-            this.grbKisiBilgileri.Controls.Add(this.rbDiger);
             this.grbKisiBilgileri.Controls.Add(this.rbKadin);
             this.grbKisiBilgileri.Controls.Add(this.rbErkek);
             this.grbKisiBilgileri.Controls.Add(this.txtEPosta);
@@ -81,7 +76,7 @@
             this.grbKisiBilgileri.Controls.Add(this.label2);
             this.grbKisiBilgileri.Controls.Add(this.label1);
             this.grbKisiBilgileri.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.grbKisiBilgileri.Location = new System.Drawing.Point(113, 143);
+            this.grbKisiBilgileri.Location = new System.Drawing.Point(92, 38);
             this.grbKisiBilgileri.Name = "grbKisiBilgileri";
             this.grbKisiBilgileri.Size = new System.Drawing.Size(326, 355);
             this.grbKisiBilgileri.TabIndex = 2;
@@ -137,21 +132,10 @@
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
             // 
-            // rbDiger
-            // 
-            this.rbDiger.AutoSize = true;
-            this.rbDiger.Location = new System.Drawing.Point(248, 175);
-            this.rbDiger.Name = "rbDiger";
-            this.rbDiger.Size = new System.Drawing.Size(50, 17);
-            this.rbDiger.TabIndex = 6;
-            this.rbDiger.TabStop = true;
-            this.rbDiger.Text = "Diğer";
-            this.rbDiger.UseVisualStyleBackColor = true;
-            // 
             // rbKadin
             // 
             this.rbKadin.AutoSize = true;
-            this.rbKadin.Location = new System.Drawing.Point(180, 175);
+            this.rbKadin.Location = new System.Drawing.Point(225, 173);
             this.rbKadin.Name = "rbKadin";
             this.rbKadin.Size = new System.Drawing.Size(52, 17);
             this.rbKadin.TabIndex = 5;
@@ -162,7 +146,7 @@
             // rbErkek
             // 
             this.rbErkek.AutoSize = true;
-            this.rbErkek.Location = new System.Drawing.Point(118, 175);
+            this.rbErkek.Location = new System.Drawing.Point(142, 173);
             this.rbErkek.Name = "rbErkek";
             this.rbErkek.Size = new System.Drawing.Size(53, 17);
             this.rbErkek.TabIndex = 4;
@@ -286,28 +270,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ad:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(231, 103);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 13);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "TROJANS OTEL";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::OtelReservation.Properties.Resources.trojanLogo;
-            this.pictureBox2.Location = new System.Drawing.Point(206, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(139, 127);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            // 
             // frmYeniKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,18 +277,14 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::OtelReservation.Properties.Resources.gbackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(564, 510);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(536, 447);
             this.Controls.Add(this.grbKisiBilgileri);
-            this.Controls.Add(this.pictureBox2);
             this.Name = "frmYeniKayit";
             this.Text = "Müşteri Kayıt Formu";
             this.Load += new System.EventHandler(this.frmYeniKayit_Load);
             this.grbKisiBilgileri.ResumeLayout(false);
             this.grbKisiBilgileri.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -336,7 +294,6 @@
         private System.Windows.Forms.MaskedTextBox mstTelefon;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.RadioButton rbDiger;
         private System.Windows.Forms.RadioButton rbKadin;
         private System.Windows.Forms.RadioButton rbErkek;
         private System.Windows.Forms.TextBox txtEPosta;
@@ -354,8 +311,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDevamEt;
         private System.Windows.Forms.Button btnKisiGuncelle;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

@@ -41,6 +41,7 @@
             // 
             this.btnGiris.BackColor = System.Drawing.Color.Gainsboro;
             this.btnGiris.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGiris.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnGiris.Location = new System.Drawing.Point(182, 136);
             this.btnGiris.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGiris.Name = "btnGiris";
@@ -52,6 +53,7 @@
             // 
             // txtKullaniciAdi
             // 
+            this.txtKullaniciAdi.ForeColor = System.Drawing.Color.Black;
             this.txtKullaniciAdi.Location = new System.Drawing.Point(150, 50);
             this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
@@ -82,7 +84,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(38, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -92,14 +94,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnGiris);
             this.groupBox1.Controls.Add(this.txtSifre);
             this.groupBox1.Controls.Add(this.txtKullaniciAdi);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(94, 158);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.Location = new System.Drawing.Point(95, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(351, 178);
             this.groupBox1.TabIndex = 6;

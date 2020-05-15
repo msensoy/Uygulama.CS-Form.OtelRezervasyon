@@ -242,7 +242,6 @@
     <None Include="Resources\indir.jpg" />
     <None Include="Resources\geributon.png" />
     <None Include="Resources\geri.png" />
-    <None Include="Resources\trojanLogo.png" />
     <None Include="Resources\admin1.jpg" />
     <None Include="Resources\background1.jpg" />
     <None Include="Resources\admin.jpg" />

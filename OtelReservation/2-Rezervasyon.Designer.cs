@@ -173,7 +173,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(152, 99);
+            this.label8.Location = new System.Drawing.Point(138, 98);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 13);
             this.label8.TabIndex = 0;
@@ -185,9 +185,9 @@
             this.lblKapasite.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblKapasite.Location = new System.Drawing.Point(108, 98);
             this.lblKapasite.Name = "lblKapasite";
-            this.lblKapasite.Size = new System.Drawing.Size(48, 13);
+            this.lblKapasite.Size = new System.Drawing.Size(13, 13);
             this.lblKapasite.TabIndex = 0;
-            this.lblKapasite.Text = "Kapasite";
+            this.lblKapasite.Text = "0";
             // 
             // lblUcret
             // 

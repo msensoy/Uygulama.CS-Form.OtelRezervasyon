@@ -52,13 +52,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnRezervasyonBitir = new System.Windows.Forms.Button();
-            this.btnGeri = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.btnKonukEkle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +118,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(78, 149);
+            this.groupBox1.Location = new System.Drawing.Point(51, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(297, 213);
             this.groupBox1.TabIndex = 5;
@@ -189,7 +185,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(434, 149);
+            this.groupBox2.Location = new System.Drawing.Point(407, 64);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(297, 213);
             this.groupBox2.TabIndex = 6;
@@ -295,7 +291,7 @@
             // 
             // btnRezervasyonBitir
             // 
-            this.btnRezervasyonBitir.Location = new System.Drawing.Point(656, 407);
+            this.btnRezervasyonBitir.Location = new System.Drawing.Point(629, 308);
             this.btnRezervasyonBitir.Name = "btnRezervasyonBitir";
             this.btnRezervasyonBitir.Size = new System.Drawing.Size(75, 31);
             this.btnRezervasyonBitir.TabIndex = 7;
@@ -303,43 +299,9 @@
             this.btnRezervasyonBitir.UseVisualStyleBackColor = true;
             this.btnRezervasyonBitir.Click += new System.EventHandler(this.btnRezervasyonBitir_Click);
             // 
-            // btnGeri
-            // 
-            this.btnGeri.BackColor = System.Drawing.Color.LightGray;
-            this.btnGeri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGeri.Location = new System.Drawing.Point(461, 407);
-            this.btnGeri.Name = "btnGeri";
-            this.btnGeri.Size = new System.Drawing.Size(178, 31);
-            this.btnGeri.TabIndex = 8;
-            this.btnGeri.Text = "Rezervasyon Bilgilerini Güncelle";
-            this.btnGeri.UseVisualStyleBackColor = false;
-            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::OtelReservation.Properties.Resources.trojanLogo;
-            this.pictureBox2.Location = new System.Drawing.Point(329, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(139, 127);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(354, 104);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "TROJANS OTEL";
-            // 
             // btnKonukEkle
             // 
-            this.btnKonukEkle.Location = new System.Drawing.Point(90, 397);
+            this.btnKonukEkle.Location = new System.Drawing.Point(63, 312);
             this.btnKonukEkle.Name = "btnKonukEkle";
             this.btnKonukEkle.Size = new System.Drawing.Size(75, 23);
             this.btnKonukEkle.TabIndex = 12;
@@ -354,25 +316,21 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImage = global::OtelReservation.Properties.Resources.admin1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(782, 372);
             this.Controls.Add(this.btnKonukEkle);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.btnRezervasyonBitir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.IsMdiContainer = true;
             this.Name = "frmRezervasyonTamamla";
             this.Text = "RezervasyonTamamla";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmRezervasyonTamamla_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -397,13 +355,10 @@
         private System.Windows.Forms.Label lblEMail;
         private System.Windows.Forms.Button btnRezervasyonBitir;
         private System.Windows.Forms.ListBox lstOdaNo;
-        private System.Windows.Forms.Button btnGeri;
         private System.Windows.Forms.Label lblCikisTarihi;
         private System.Windows.Forms.Label lblGirisTarihi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnKonukEkle;
     }

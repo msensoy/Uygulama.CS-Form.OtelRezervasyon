@@ -31,7 +31,7 @@ namespace OtelReservation
                              r.NumberOfAccomodation
                          }
                         );
-
+            var sorgu1 = _db.Reservations.Select(x => x.Customer).ToList();
             dgvReservations.DataSource = sorgu.ToList();
             dgvReservations.Columns[0].HeaderText = "Rezervasyon Numarası";
             dgvReservations.Columns[1].HeaderText = "Oda Numarası";

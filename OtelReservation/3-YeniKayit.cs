@@ -91,7 +91,7 @@ namespace OtelReservation
 
             if (rbKadin.Checked)
             {
-                kisi.Gender = (int)Helpers.Gender.diger;
+                kisi.Gender = (int)Helpers.Gender.kadin;
             }
             else if (rbErkek.Checked)
             {
@@ -170,8 +170,7 @@ namespace OtelReservation
                         txtSoyad.Text = sorgu.Lastname;
                         txtEPosta.Text = sorgu.E_Mail;
                         if (sorgu.Gender == 1) { rbErkek.Checked = true; }
-                        else if (sorgu.Gender == 0) { rbKadin.Checked = true; }
-                        else { rbDiger.Checked = true; }
+                        else if (sorgu.Gender == 2) { rbKadin.Checked = true; }
                         mstTelefon.Text = sorgu.PhoneNumber;
                         btnKisiGuncelle.Visible = true;
 

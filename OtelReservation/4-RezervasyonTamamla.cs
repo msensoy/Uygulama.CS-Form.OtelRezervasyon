@@ -14,7 +14,7 @@ namespace OtelReservation
     {
         private Customer kisi;
         private RezervasyonOzet rezervasyonOzet;
-       
+
         private ClassUser kullanici;
         private List<string> misafirAdlari;
         private List<string> misafirSoyadlari;
@@ -29,7 +29,7 @@ namespace OtelReservation
         }
 
 
-        public frmRezervasyonTamamla(RezervasyonOzet rezervasyonOzet, List<string> misafirAdlari, List<string> misafirSoyadlari, List<string> odaNumaralari, Customer kisi, ClassUser kullanici) 
+        public frmRezervasyonTamamla(RezervasyonOzet rezervasyonOzet, List<string> misafirAdlari, List<string> misafirSoyadlari, List<string> odaNumaralari, Customer kisi, ClassUser kullanici)
         {
             InitializeComponent();
             this.rezervasyonOzet = rezervasyonOzet;
@@ -72,9 +72,9 @@ namespace OtelReservation
 
         private void btnRezervasyonBitir_Click(object sender, EventArgs e)
         {
-            using (OtelRezervasyonDBEntities _db=new OtelRezervasyonDBEntities())
+            using (OtelRezervasyonDBEntities _db = new OtelRezervasyonDBEntities())
             {
-                using (var transaction=_db.Database.BeginTransaction())
+                using (var transaction = _db.Database.BeginTransaction())
                 {
                     try
                     {
@@ -107,30 +107,59 @@ namespace OtelReservation
                         int rezervasyonID = (from r in _db.Reservations
                                              orderby r.ReservationID descending
                                              select r.ReservationID).First();
-                        if(misafirAdlari != null) { 
-                        for (int j = 0; j < misafirAdlari.Count; j++)
-                        {
-                            if (misafirAdlari[j] == "-")
-                            {
 
-                                odaNumaralariIndis++;
-                                continue;
+                        ReservationDetail reservationDetail = new ReservationDetail();
+                        Guest guest = new Guest();
+
+
+                        if (misafirAdlari != null)
+                        {
+                            for (int j = 0; j < misafirAdlari.Count; j++)
+                            {
+                                if (misafirAdlari[j] == "-")
+                                {
+
+                                    odaNumaralariIndis++;
+                                    continue;
+                                }
+                                
+                                guest.FirstName = misafirAdlari[j];
+                                guest.LastName = misafirSoyadlari[j];
+                                _db.Guests.Add(guest);
+                                _db.SaveChanges();
+
+                                //reservationDetail.RoomID = int.Parse(odaNumaralari[odaNumaralariIndis]);
+                                //reservationDetail.ReservationID = rezervasyonID;
+                                //_db.ReservationDetails.Add(reservationDetail);
+                                //_db.SaveChanges();
                             }
-                            Guest guest = new Guest();
-                            guest.FirstName = misafirAdlari[j];
-                            guest.LastName = misafirSoyadlari[j];
+                        }
+                        else
+                        {
+                            guest.FirstName = "null";
+                            guest.LastName = "null";
                             _db.Guests.Add(guest);
                             _db.SaveChanges();
+                        }
 
-                            ReservationDetail reservationDetail = new ReservationDetail();
+                        int guestID = (from r in _db.Guests
+                                       orderby r.GuestID descending
+                                       select r.GuestID).FirstOrDefault();
 
+                        if (rezervasyonOzet.SecilenOdaNumaralari.Count == 1)
+                        {
+                            int odaNumara = rezervasyonOzet.SecilenOdaNumaralari.First();
 
-                            reservationDetail.RoomID = int.Parse(odaNumaralari[odaNumaralariIndis]);
+                            int roomID = (from r in _db.Rooms
+                                          where r.RoomNumber == odaNumara
+                                          select r.RoomID).First();
+                            reservationDetail.GuestID = guestID;
+                            reservationDetail.RoomID = roomID;
                             reservationDetail.ReservationID = rezervasyonID;
                             _db.ReservationDetails.Add(reservationDetail);
                             _db.SaveChanges();
                         }
-                        }
+
                         #endregion
                     }
                     catch (Exception ex)
@@ -138,11 +167,12 @@ namespace OtelReservation
                         MessageBox.Show("Bir Hata oluştu!");
                         transaction.Rollback();
                     }
-                    MessageBox.Show("Rezervasyon İşlemi Başarı ile Tamamlandı !");
                     transaction.Commit();
+                    MessageBox.Show("Rezervasyon İşlemi Başarı ile Tamamlandı !");
+                    this.Close();
                 }
             }
-            
+
 
 
         }
@@ -150,7 +180,7 @@ namespace OtelReservation
 
         private void btnKonukEkle_Click(object sender, EventArgs e)
         {
-            frmKonukEkle frmKonukEkle = new frmKonukEkle(rezervasyonOzet, kisi , kullanici);
+            frmKonukEkle frmKonukEkle = new frmKonukEkle(rezervasyonOzet, kisi, kullanici);
 
             frmKonukEkle.Show();
             this.Close();

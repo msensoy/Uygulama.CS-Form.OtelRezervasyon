@@ -58,5 +58,13 @@ namespace OtelReservation
         {
 
         }
+
+        private void btnGiris_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnGiris_Click(sender, e);
+            }
+        }
     }
 }

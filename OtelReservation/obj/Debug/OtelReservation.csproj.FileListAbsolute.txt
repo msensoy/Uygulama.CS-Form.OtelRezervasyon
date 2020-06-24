@@ -62,3 +62,25 @@ C:\Users\MONSTER\GitHub\Uygulama.CS-Form.OtelRezervasyon\OtelReservation\obj\Deb
 C:\Users\MONSTER\GitHub\Uygulama.CS-Form.OtelRezervasyon\OtelReservation\obj\Debug\OtelReservation.csproj.CopyComplete
 C:\Users\MONSTER\GitHub\Uygulama.CS-Form.OtelRezervasyon\OtelReservation\obj\Debug\OtelReservation.exe
 C:\Users\MONSTER\GitHub\Uygulama.CS-Form.OtelRezervasyon\OtelReservation\obj\Debug\OtelReservation.pdb
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\bin\Debug\OtelReservation.exe.config
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\bin\Debug\OtelReservation.exe
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\bin\Debug\OtelReservation.pdb
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\bin\Debug\EntityFramework.dll
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\bin\Debug\EntityFramework.xml
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.csprojAssemblyReference.cache
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmKonukEkle.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmRezervasyon.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmGiris.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmAnasayfa.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmOdaEkle.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.Properties.Resources.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmRezervasyonBilgileri.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmRezervasyonTamamla.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.frmYeniKayit.resources
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.csproj.GenerateResource.cache
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.csproj.CoreCompileInputs.cache
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.csproj.CopyComplete
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.exe
+C:\Users\MONSTER\Desktop\Ahmet Şensoy Sistem Analizi ve Tasarımı Arasınav Ödevi\Proje\OtelReservation\obj\Debug\OtelReservation.pdb

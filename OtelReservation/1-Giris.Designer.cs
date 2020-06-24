@@ -50,6 +50,7 @@
             this.btnGiris.Text = "GİRİŞ";
             this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
+            this.btnGiris.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnGiris_KeyPress);
             // 
             // txtKullaniciAdi
             // 
